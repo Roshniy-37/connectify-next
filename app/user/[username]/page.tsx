@@ -15,7 +15,7 @@ function page({ params }: { params: { username: string } }) {
         const fetchData = async()=>{
             const response = await fetch(`/api/post?userid=${params.username}`)
             const data = await response.json()
-            setPosts(data.rows.rows)
+            setPosts(data)
             console.log(data)
         }
         fetchData();
