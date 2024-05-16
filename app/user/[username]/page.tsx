@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 import React, { useEffect, useState } from 'react'
 import { sql } from "@vercel/postgres";
@@ -7,9 +8,9 @@ function page({ params }: { params: { username: string } }) {
     const [posts, setPosts]= useState<any>([{
         id: '6f22e9fa-0ac3-4036-b682-57814871f535',
         userid: 'roshni',
-        title: 'New1',
-        description: 'This is my post',
-        added: '2024-05-11T10:37:07.934Z'
+        title: 'No Posts',
+        description: 'Add new Posts',
+        added: ''
       }])
     useEffect(()=>{
         const fetchData = async()=>{
