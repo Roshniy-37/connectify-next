@@ -1,8 +1,0 @@
--- CreateTable
-CREATE TABLE "Post" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "userid" TEXT NOT NULL,
-    "title" TEXT NOT NULL,
-    "description" TEXT,
-    "added" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-);

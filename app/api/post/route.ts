@@ -5,6 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function GET(request: Request) {
+  try{
   const { searchParams } = new URL(request.url);
   const user_id = searchParams.get("userid")?.toString();
 
@@ -22,4 +23,8 @@ export async function GET(request: Request) {
   // } catch (error) {
   //   return NextResponse.json({ error }, { status: 500 });
   // }
+}catch (error: any) {
+    console.error("API Error:", error);
+    return NextResponse.json({ error: "Failed to fetch posts" }, { status: 500 });
+  }
 }
